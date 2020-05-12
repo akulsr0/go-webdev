@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+    {{$name := .Name}}
+    {{$username := .Username}}
+        <h1>Name: {{$name}} || Username: {{$username}}</h1>
+        <h3>Projects</h3>
+        <div>
+            {{/* Iterating over Projects Array */}}
+            {{ range $key, $val := .Projects}}
+                <strong> {{$key}}) {{$val.Name}}</strong>
+                <br>
+                <small>{{$val.Language}}</small>
+                <br><br>
+            {{end}}
+        </div>
+    </body>
+</html>
